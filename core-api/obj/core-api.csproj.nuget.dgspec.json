@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/dotnet-core/dotnet-core.csproj": {}
+    "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/core-api.csproj": {}
   },
   "projects": {
-    "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/dotnet-core/dotnet-core.csproj": {
+    "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/core-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/dotnet-core/dotnet-core.csproj",
-        "projectName": "dotnet-core",
-        "projectPath": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/dotnet-core/dotnet-core.csproj",
+        "projectUniqueName": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/core-api.csproj",
+        "projectName": "core-api",
+        "projectPath": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/core-api.csproj",
         "packagesPath": "/Users/furkanadiguzel/.nuget/packages/",
-        "outputPath": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/dotnet-core/obj/",
+        "outputPath": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/furkanadiguzel/.nuget/NuGet/NuGet.Config"
@@ -46,13 +46,23 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.3, )"
             }
           },
           "imports": [

@@ -1,4 +1,4 @@
-namespace dotnet_core;
+namespace core_api;
 
 public class WeatherForecast
 {
