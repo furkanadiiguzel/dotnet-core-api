@@ -2127,6 +2127,7 @@
     "net7.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.10",
       "Microsoft.AspNetCore.OpenApi >= 7.0.0",
+      "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0",
@@ -2177,6 +2178,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
