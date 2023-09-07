@@ -1,0 +1,7 @@
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.csproj.AssemblyReference.cache
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.AssemblyInfoInputs.cache
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.AssemblyInfo.cs
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.csproj.CoreCompileInputs.cache
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.MvcApplicationPartsAssemblyInfo.cs
+/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/obj/Debug/net7.0/core-api.MvcApplicationPartsAssemblyInfo.cache
