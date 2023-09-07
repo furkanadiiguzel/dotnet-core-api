@@ -1,29 +1,22 @@
-// Startup.cs
-public void ConfigureServices(IServiceCollection services)
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+public class Startup
 {
-    // ...
-    
-    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
+    // Other configurations
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // ...
+
+        // Configure the DbContext to use PostgreSQL
+        services.AddDbContext<ApplicationDbContext>(options =>
         {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["Jwt:Key"])),
-                ValidateIssuer = false,
-                ValidateAudience = false
-            };
+            var configuration = Configuration.GetConnectionString("DefaultConnection");
+            options.UseNpgsql(configuration);
         });
 
-    // ...
-}
-
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    // ...
-    
-    app.UseAuthentication();
-    app.UseAuthorization();
-    
-    // ...
+        // ...
+    }
 }
