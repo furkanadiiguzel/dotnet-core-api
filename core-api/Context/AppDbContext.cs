@@ -1,9 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using core_api.Models;
 
-namespace core-api.Context
-
-{
+namespace core_api.Context{
     public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -15,7 +13,7 @@ namespace core-api.Context
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>().toTable("users");
+        modelBuilder.Entity<User>().ToTable("users");
 
     }
 }
