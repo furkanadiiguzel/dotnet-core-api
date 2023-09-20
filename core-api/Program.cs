@@ -1,29 +1,20 @@
 using Microsoft.EntityFrameworkCore;
+using core_api.Context; // Assuming AppDbContext is defined in the 'core_api.Context' namespace
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(option)=>
+builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    option.UseSqlServer(builder.Configuration.GetConnectionString("sqlServerConnStr"));
-};
-public static IHostBuilder CreateHostBuilder(string[] args) =>
-    Host.CreateDefaultBuilder(args)
-        .ConfigureWebHostDefaults(webBuilder =>
-        {
-            webBuilder.UseStartup<Startup>();
-        });
-
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("sqlServerConnStr"));
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -31,7 +22,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
