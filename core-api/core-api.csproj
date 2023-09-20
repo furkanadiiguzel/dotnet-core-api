@@ -3,8 +3,9 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>core_api</RootNamespace>
+    <RootNamespace>score_api</RootNamespace>
   </PropertyGroup>
+  
   <ItemGroup>
    <ProjectReference Include="path/to/YourProjectContainingAppDbContext.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11"/>
