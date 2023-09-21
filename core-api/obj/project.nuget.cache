@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CLjO8pI8KgYykQnCmNE9L+Oqy6y6jdXut8NZ6Ayrszb5RLe3wf4yx5nVB47XpbGrx9dyC75IhzN3doN4HV+X4w==",
+  "dgSpecHash": "thuxYaw2Doou4FtkHYXDek8fs8vCYReNNj8xC3O1eSsO53+yWDhgJ5yPD6HGx2H++1sCaKJKhCb1L4glVzPdLw==",
   "success": true,
   "projectFilePath": "/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/core-api.csproj",
   "expectedPackageFiles": [
     "/Users/furkanadiguzel/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
-    "/Users/furkanadiguzel/.nuget/packages/log4net/2.0.5/log4net.2.0.5.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.11/microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/microsoft.aspnetcore.openapi/7.0.0/microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
@@ -45,7 +44,6 @@
     "/Users/furkanadiguzel/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "/Users/furkanadiguzel/.nuget/packages/migrations/1.0.1/migrations.1.0.1.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/npgsql/7.0.4/npgsql.7.0.4.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.4/npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
@@ -77,26 +75,5 @@
     "/Users/furkanadiguzel/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/furkanadiguzel/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'log4net 2.0.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "log4net",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Migrations 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Migrations",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

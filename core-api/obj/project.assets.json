@@ -59,19 +59,6 @@
           }
         }
       },
-      "log4net/2.0.5": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/log4net.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45-full/log4net.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.11": {
         "type": "package",
         "dependencies": {
@@ -702,18 +689,6 @@
           }
         }
       },
-      "Migrations/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "log4net": "2.0.5"
-        },
-        "compile": {
-          "lib/net40-Client/Migrations.dll": {}
-        },
-        "runtime": {
-          "lib/net40-Client/Migrations.dll": {}
-        }
-      },
       "Mono.TextTemplating/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -1297,33 +1272,6 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
-      ]
-    },
-    "log4net/2.0.5": {
-      "sha512": "AEqPZz+v+OikfnR2SqRVdQPnSaLq5y9Iz1CfRQZ9kTKPYCXHG6zYmDHb7wJotICpDLMr/JqokyjiqKAjUKp0ng==",
-      "type": "package",
-      "path": "log4net/2.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net10-full/log4net.dll",
-        "lib/net10-full/log4net.xml",
-        "lib/net11-full/log4net.dll",
-        "lib/net11-full/log4net.xml",
-        "lib/net20-full/log4net.dll",
-        "lib/net20-full/log4net.xml",
-        "lib/net35-client/log4net.dll",
-        "lib/net35-client/log4net.xml",
-        "lib/net35-full/log4net.dll",
-        "lib/net35-full/log4net.xml",
-        "lib/net40-client/log4net.dll",
-        "lib/net40-client/log4net.xml",
-        "lib/net40-full/log4net.dll",
-        "lib/net40-full/log4net.xml",
-        "lib/net45-full/log4net.dll",
-        "lib/net45-full/log4net.xml",
-        "log4net.2.0.5.nupkg.sha512",
-        "log4net.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.11": {
@@ -2468,18 +2416,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Migrations/1.0.1": {
-      "sha512": "udBzfD8ALn1uc1cOfk+inSO++xliThW+llQ0URIYxVDtjiTSp2s5N0l81Bcy4wAlaAeJIdlX3qh+cX+GJGRatA==",
-      "type": "package",
-      "path": "migrations/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40-Client/Migrations.dll",
-        "migrations.1.0.1.nupkg.sha512",
-        "migrations.nuspec"
-      ]
-    },
     "Mono.TextTemplating/2.2.1": {
       "sha512": "KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "type": "package",
@@ -3518,7 +3454,6 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
-      "Migrations >= 1.0.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "System.IdentityModel.Tokens.Jwt >= 6.32.3"
@@ -3589,10 +3524,6 @@
             "target": "Package",
             "version": "[7.0.11, )"
           },
-          "Migrations": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[7.0.4, )"
@@ -3628,27 +3559,5 @@
         "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/7.0.100/libexec/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'log4net 2.0.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "log4net",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Migrations 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Migrations",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

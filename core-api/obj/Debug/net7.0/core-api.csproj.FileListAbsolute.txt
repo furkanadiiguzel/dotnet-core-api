@@ -15,7 +15,6 @@
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Azure.Core.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Azure.Identity.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Humanizer.dll
-/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/log4net.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
@@ -37,7 +36,6 @@
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.OpenApi.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.SqlServer.Server.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
-/Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Migrations.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Mono.TextTemplating.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Npgsql.dll
 /Users/furkanadiguzel/Desktop/task-proje/dotnet-core-api/core-api/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
