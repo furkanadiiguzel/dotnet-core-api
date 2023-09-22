@@ -19,6 +19,34 @@ namespace core_api.Controllers
                 return BadRequest();
             }
             var user = await _authContext.Users.FirstOrDefaultAsync(u => u.Username == userObj.Username && u.Password == userObj.Password);
+            if(user == null)
+            {
+                return NotFound(new {Message = "User not found"});
+            }
+            return Ok(
+                new {
+                    Message = "Login Success"
+                });
+        }
+        [HttpPost("register")]
+        public async Task<IActionResult> RegisterUser([FromBody] UserController userObj)
+        {
+            if(userObj ==null)
+            {
+                return BadRequest();
+            }
+            var user = await _authContext.Users.FirstOrDefaultAsync(u => u.Username == userObj.Username);
+            if(user != null)
+            {
+                return BadRequest(new {Message = "User already exists"});
+            }
+            
+            await _authContext.Users.AddAsync(userObj);
+            await _authContext.SaveChangesAsync();
+            return Ok(
+                new {
+                    Message = "User created successfully"
+                });
         }
        
     }
