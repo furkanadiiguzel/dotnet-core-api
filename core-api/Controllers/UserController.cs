@@ -1,5 +1,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
+using core_api.Context; // Make sure this namespace is correct
+using core_api.Models; // Make sure this namespace is correct
 
 namespace core_api.Controllers
 {
@@ -8,46 +13,51 @@ namespace core_api.Controllers
     public class UserController : ControllerBase
     {
         private readonly AppDbContext _authContext;
-        public UserController(AppDbContext appDbContext){
+
+        public UserController(AppDbContext appDbContext)
+        {
             _authContext = appDbContext;
         }
+
         [HttpPost("authenticate")]
-        public async Task<IActionResult> Authenticate([FromBody] UserController userObj)
+        public async Task<IActionResult> Authenticate([FromBody] User userObj)
         {
-            if(userObj ==null)
+            if (userObj == null)
             {
                 return BadRequest();
             }
-            var user = await _authContext.Users.FirstOrDefaultAsync(u => u.Username == userObj.Username && u.Password == userObj.Password);
-            if(user == null)
+
+            var user = await _authContext.Users.FirstOrDefaultAsync(u =>
+                u.Username == userObj.Username && u.Password == userObj.Password);
+
+            if (user == null)
             {
-                return NotFound(new {Message = "User not found"});
+                return NotFound(new { Message = "User not found" });
             }
-            return Ok(
-                new {
-                    Message = "Login Success"
-                });
+
+            return Ok(new { Message = "Login Success" });
         }
+
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterUser([FromBody] UserController userObj)
+        public async Task<IActionResult> RegisterUser([FromBody] User userObj)
         {
-            if(userObj ==null)
+            if (userObj == null)
             {
                 return BadRequest();
             }
+
             var user = await _authContext.Users.FirstOrDefaultAsync(u => u.Username == userObj.Username);
-            if(user != null)
+
+            if (user != null)
             {
-                return BadRequest(new {Message = "User already exists"});
+                return BadRequest(new { Message = "User already exists" });
             }
-            
-            await _authContext.Users.AddAsync(userObj);
+
+            // Assuming you have a DbSet<User> in your AppDbContext
+            _authContext.Users.Add(userObj);
             await _authContext.SaveChangesAsync();
-            return Ok(
-                new {
-                    Message = "User created successfully"
-                });
+
+            return Ok(new { Message = "User created successfully" });
         }
-       
     }
 }
