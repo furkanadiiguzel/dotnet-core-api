@@ -3,8 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using core_api.Context; // Make sure this namespace is correct
-using core_api.Models; // Make sure this namespace is correct
+using core_api.Context; 
+using core_api.Models; 
+using core_api.Helpers;
+
+
+
+
 
 namespace core_api.Controllers
 {
@@ -54,7 +59,10 @@ namespace core_api.Controllers
             }
 
             // Assuming you have a DbSet<User> in your AppDbContext
-            _authContext.Users.Add(userObj);
+            userObj.Password = PasswordHashing.HashPassword(userObj.Password);
+            userObj.Role = "User";
+            userObj.Token = "";
+             _authContext.Users.Add(userObj);
             await _authContext.SaveChangesAsync();
 
             return Ok(new { Message = "User created successfully" });

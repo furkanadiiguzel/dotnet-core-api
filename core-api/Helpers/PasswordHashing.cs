@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 
 namespace core_api.Helpers
@@ -14,7 +15,7 @@ namespace core_api.Helpers
 
         private static readonly int Iteration = 10000;
 
-        public static string HashPasswword(string password){
+        public static string HashPassword(string password){
             byte[] salt;;
             rng.GetBytes(salt = new byte[SaltSize]);
             var key= new Rfc2898DeriveBytes(password,salt,Iteration);
