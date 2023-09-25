@@ -62,7 +62,7 @@ namespace core_api.Controllers
             userObj.Password = PasswordHashing.HashPassword(userObj.Password);
             userObj.Role = "User";
             userObj.Token = "";
-             _authContext.Users.Add(userObj);
+            _authContext.Users.Add(userObj);
             await _authContext.SaveChangesAsync();
 
             return Ok(new { Message = "User created successfully" });
