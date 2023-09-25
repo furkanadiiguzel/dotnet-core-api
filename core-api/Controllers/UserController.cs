@@ -100,6 +100,10 @@ namespace core_api.Controllers
             {
                 sb.Append("Password must contain at least one uppercase and lowercase letter"+Environment.NewLine);
             }
+            if(Regex.IsMatch(password,"[0-9]"))
+            {
+                sb.Append("Password must contain at least one number"+Environment.NewLine);
+            }
            
             return sb.ToString();
         }
