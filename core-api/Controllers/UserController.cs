@@ -10,6 +10,7 @@ using System.Text;
 using System;
 using System.Text.RegularExpressions;
 
+
 namespace core_api.Controllers
 {
     [Route("api/[controller]")]
@@ -32,11 +33,16 @@ namespace core_api.Controllers
             }
 
             var user = await _authContext.Users.FirstOrDefaultAsync(u =>
-                u.Username == userObj.Username && u.Password == userObj.Password);
+                u.Username == userObj.Username);
 
             if (user == null)
             {
                 return NotFound(new { Message = "User not found" });
+
+            }
+            if(!(PasswordHashing.VerifyPassword(userObj.Password,user.Password)))
+            {
+                return BadRequest(new { Message = "Password is incorrect" });
             }
 
             return Ok(new { Message = "Login Success" });
