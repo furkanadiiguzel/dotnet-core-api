@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 using core_api.Context; 
 using core_api.Models; 
 using core_api.Helpers;
-
-
-
-
+using System.Text;
+using System;
+using System.Text.RegularExpressions;
 
 namespace core_api.Controllers
 {
@@ -57,8 +56,25 @@ namespace core_api.Controllers
             {
                 return BadRequest(new { Message = "User already exists" });
             }
+            //Check Username
+            if(await CheckUserNameExistAsync(userObj.Username)){
+                return BadRequest(new { Message = "Username already exists" });
+            }
+            //Check Email
+            if(await CheckEmailExistAsync(userObj.Email)){
+                return BadRequest(new { Message = "Email already exists" });
+            }
 
-            // Assuming you have a DbSet<User> in your AppDbContext
+            //Check Password Strenght
+
+            var pass = CheckPasswordStrength(userObj.Password);
+            if(!string.IsNullOrEmpty(pass)){
+                return BadRequest(new { Message = pass.ToString() });
+            }
+
+
+
+
             userObj.Password = PasswordHashing.HashPassword(userObj.Password);
             userObj.Role = "User";
             userObj.Token = "";
@@ -66,6 +82,29 @@ namespace core_api.Controllers
             await _authContext.SaveChangesAsync();
 
             return Ok(new { Message = "User created successfully" });
+
+            
         }
+        private Task<bool> CheckUserNameExistAsync(string username)
+            => _authContext.Users.AnyAsync(u=>u.Username==username);
+
+        private Task<bool> CheckEmailExistAsync(string email)
+            => _authContext.Users.AnyAsync(u=>u.Email==email);
+
+        private string CheckPasswordStrength(string password){
+            StringBuilder sb = new StringBuilder();
+            if(password.Length < 8 ){
+                sb.Append("Password must be at least 8 characters long"+Environment.NewLine);
+            }
+            if(!(Regex.IsMatch(password, "[a-z]") && Regex.IsMatch(password, "[A-Z]")))
+            {
+                sb.Append("Password must contain at least one uppercase and lowercase letter"+Environment.NewLine);
+            }
+           
+            return sb.ToString();
+        }
+
+
+        
     }
 }
