@@ -3,7 +3,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>score_api</RootNamespace>
+    <RootNamespace>core_api</RootNamespace>
   </PropertyGroup>
   
   <ItemGroup>
