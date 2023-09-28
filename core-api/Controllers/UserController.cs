@@ -113,7 +113,6 @@ namespace core_api.Controllers
            
             return sb.ToString();
         }
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
