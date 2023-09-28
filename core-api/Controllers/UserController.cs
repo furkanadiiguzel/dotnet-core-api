@@ -9,6 +9,12 @@ using core_api.Helpers;
 using System.Text;
 using System;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text.Json;
+using Microsoft.IdentityModel.Tokens;
+
 
 
 namespace core_api.Controllers
@@ -119,6 +125,7 @@ namespace core_api.Controllers
             var users = await _authContext.Users.ToListAsync();
             return Ok(users);
         }
+        
 
 
         
