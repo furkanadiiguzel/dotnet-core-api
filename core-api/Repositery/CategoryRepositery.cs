@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using core_api.Models;
 
 namespace core_api.Repositories
 {
     public interface ICategoryRepository
     {
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
-        Task<Category> GetCategoryByIdAsync(long id);
+z        Task<Category> GetCategoryByIdAsync(long id);
         Task<Category> AddCategoryAsync(Category category);
         Task<Category> UpdateCategoryAsync(Category category);
         Task<bool> DeleteCategoryAsync(long id);
