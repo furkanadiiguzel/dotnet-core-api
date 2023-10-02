@@ -11,7 +11,7 @@ using core_api.Context;
 namespace score_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230922071314_Migrations")]
+    [Migration("20231001221523_Migrations")]
     partial class Migrations
     {
         /// <inheritdoc />
