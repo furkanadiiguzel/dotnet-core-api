@@ -10,7 +10,7 @@ namespace core_api.Repositories
     public interface ICategoryRepository
     {
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
-z        Task<Category> GetCategoryByIdAsync(long id);
+        Task<Category> GetCategoryByIdAsync(long id);
         Task<Category> AddCategoryAsync(Category category);
         Task<Category> UpdateCategoryAsync(Category category);
         Task<bool> DeleteCategoryAsync(long id);
@@ -18,9 +18,9 @@ z        Task<Category> GetCategoryByIdAsync(long id);
 
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly YourDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public CategoryRepository(YourDbContext dbContext)
+        public CategoryRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

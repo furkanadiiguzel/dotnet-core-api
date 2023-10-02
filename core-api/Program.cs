@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using core_api.Context; // Assuming AppDbContext is defined in the 'core_api.Context' namespace
-
+using core_api.Context;
+using core_api.Middleware; // Include the namespace where JwtAuthenticationMiddleware is defined
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("MyPolicy",builder =>
+    options.AddPolicy("MyPolicy", builder =>
     {
         builder.AllowAnyOrigin()
             .AllowAnyHeader()
@@ -32,6 +32,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Add the JwtAuthenticationMiddleware before app.UseAuthentication()
+app.UseMiddleware<JwtAuthenticationMiddleware>();
 
 app.UseAuthentication();
 
