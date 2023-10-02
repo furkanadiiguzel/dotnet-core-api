@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using dotnetBackend.Models;
-using dotnetBackend.Services;
+using core_api.Models;
+using core_api.Services;
 using System;
 
-namespace dotnetBackend.Controllers
+namespace core_api.Controllers
 {
     [Route("api/category")]
     [ApiController]
