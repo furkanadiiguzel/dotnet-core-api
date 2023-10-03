@@ -2,17 +2,19 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using core_api.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace core_api // Replace with your actual namespace
 {
-    public class UserRole
+    public class UserRole 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long UserRoleId { get; set; }
+        public long Id { get; set; }
 
         [ForeignKey("UserId")]
-        public long UserId { get; set; }
+        public string UserId { get; set; } // Change the data type to string
+
         public virtual User User { get; set; }
 
         [ForeignKey("RoleId")]

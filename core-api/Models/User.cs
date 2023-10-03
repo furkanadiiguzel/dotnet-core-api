@@ -14,6 +14,8 @@ namespace core_api.Models
 
         // Navigation property for user roles
         public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
+
 
         // Constructor
         public User()

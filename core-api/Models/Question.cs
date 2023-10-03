@@ -9,19 +9,19 @@ namespace core_api.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long QuesId { get; set; }
-        
+
         public string Content { get; set; }
-        
+
         public string Image { get; set; }
-        
+
         public string Option1 { get; set; }
-        
+
         public string Option2 { get; set; }
-        
+
         public string Option3 { get; set; }
-        
+
         public string Option4 { get; set; }
-        
+
         [JsonIgnore]
         public string Answer { get; set; }
 
@@ -29,8 +29,12 @@ namespace core_api.Models
         public string GivenAnswer { get; set; }
 
         public long QuizId { get; set; }
-        
+
         [JsonIgnore]
         public virtual Quiz Quiz { get; set; }
+        public string UserId { get; set; }
+
+        [JsonIgnore]
+        public virtual User User { get; set; }
     }
 }

@@ -35,6 +35,10 @@ namespace core_api.Context
                 .WithOne(ur => ur.Role)
                 .HasForeignKey(ur => ur.RoleId);
 
+            modelBuilder.Entity<Category>()
+                .ToTable("categories")
+                .HasKey(c => c.CId);
+
             modelBuilder.Entity<Quiz>()
                 .HasOne(q => q.Category)
                 .WithMany(c => c.Quizzes)

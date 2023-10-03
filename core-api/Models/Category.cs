@@ -8,6 +8,7 @@ namespace core_api.Models
     {
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public long CId { get; set; }
         
         public string Title { get; set; }

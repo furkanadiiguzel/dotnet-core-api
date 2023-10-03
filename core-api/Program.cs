@@ -1,5 +1,8 @@
-using Microsoft.Extensions.Options; // Add this namespace
-using core_api.Middleware; // Include the namespace where JwtMiddleware is defined
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using core_api.Context; // Add the appropriate namespace for AppDbContext
+using Microsoft.EntityFrameworkCore; // Add the necessary namespace for UseSqlServer
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +20,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add JWT settings configuration
-builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+// Add JWT settings configuration if needed
+// builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -35,8 +38,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Add the JwtAuthenticationMiddleware before app.UseAuthentication()
-app.UseMiddleware<JwtAuthenticationMiddleware>();
+// Uncomment the JwtAuthenticationMiddleware if needed
+// app.UseMiddleware<JwtAuthenticationMiddleware>();
 
 app.UseAuthentication();
 
