@@ -17,9 +17,9 @@ namespace core_api.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly AuthDbContext _dbContext;
+        private readonly ApplicationUser _dbContext;
 
-        public UserRepository(AuthDbContext dbContext)
+        public UserRepository(ApplicationUser dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }

@@ -18,9 +18,9 @@ namespace core_api.Repositories
 
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly AppDbContext _dbContext;
+        private readonly ApplicationUser _dbContext;
 
-        public CategoryRepository(AppDbContext dbContext)
+        public CategoryRepository(ApplicationUser dbContext)
         {
             _dbContext = dbContext;
         }

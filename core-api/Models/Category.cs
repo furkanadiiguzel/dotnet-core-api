@@ -6,7 +6,7 @@ namespace core_api.Models
 {
     public class Category
     {
-        [Key]
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CId { get; set; }
         
@@ -14,7 +14,6 @@ namespace core_api.Models
         
         public string Description { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Quiz> Quizzes { get; set; }
     }
 }

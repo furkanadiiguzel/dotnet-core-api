@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using core_api.Dtos;
+using core_api.Models;
+
+
 
 namespace core_api.Services
 {
     public class CategoryService : ICategoryService
     {
-        private readonly AppDbContext _context; // Replace with your actual DbContext
+        private readonly ApplicationUser _context; // Replace with your actual DbContext
 
-        public CategoryService(AppDbContext context)
+        public CategoryService(ApplicationUser context)
         {
             _context = context;
         }

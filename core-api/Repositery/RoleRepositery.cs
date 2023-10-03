@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using core_api.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace core_api.Repositories
 {
@@ -14,9 +17,9 @@ namespace core_api.Repositories
 
     public class RoleRepository : IRoleRepository
     {
-        private readonly AppDbContext _dbContext;
+        private readonly ApplicationUser _dbContext;
 
-        public RoleRepository(AppDbContext dbContext)
+        public RoleRepository(ApplicationUser dbContext)
         {
             _dbContext = dbContext;
         }

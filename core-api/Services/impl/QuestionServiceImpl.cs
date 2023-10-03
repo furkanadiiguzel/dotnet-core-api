@@ -4,7 +4,7 @@ using System.Linq;
 using AutoMapper;
 using core_api.Models; 
 using core_api.Dtos;
-using core_api.Context;
+
 
 
 
@@ -12,10 +12,10 @@ namespace core_api.Services
 {
     public class QuestionService : IQuestionService
     {
-        private readonly AppDbContext _context; // Replace with your actual DbContext
+        private readonly ApplicationUser _context; // Replace with your actual DbContext
         private readonly IMapper _mapper; // Add AutoMapper for mapping entities
 
-        public QuestionService(AppDbContext context, IMapper mapper)
+        public QuestionService(ApplicationUser context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

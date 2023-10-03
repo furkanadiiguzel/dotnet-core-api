@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using core_api.Models;
 using System;
 using System.Collections.Generic;
+using core_api.Services;
+using core_api.Dtos;
+using System.Linq;
+
 
 namespace core_api.Controllers
 {

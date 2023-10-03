@@ -2,21 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using core_api.Models; 
+using core_api.Models;
 using core_api.Services;
-using core_api.Context;
 using core_api.Dtos;
-
-
 
 namespace core_api.Services
 {
     public class QuizService : IQuizService
     {
-        private readonly AppDbContext _context; // Replace with your actual DbContext
+        private readonly ApplicationUser _context; // Replace with your actual DbContext
         private readonly IMapper _mapper; // Add AutoMapper for mapping entities
 
-        public QuizService(AppDbContext context, IMapper mapper)
+        public QuizService(ApplicationUser context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -91,6 +88,7 @@ namespace core_api.Services
                 return new ResultQuizDto { Success = false, Errors = new List<string> { "Quiz not found" } };
             }
         }
+
 
         public List<Quiz> GetQuizzesByCategory(Category category)
         {

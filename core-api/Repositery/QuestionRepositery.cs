@@ -18,9 +18,9 @@ namespace core_api.Repositories
 
     public class QuestionRepository : IQuestionRepository
     {
-        private readonly YourDbContext _dbContext;
+        private readonly ApplicationUser _dbContext;
 
-        public QuestionRepository(YourDbContext dbContext)
+        public QuestionRepository(ApplicationUser dbContext)
         {
             _dbContext = dbContext;
         }
