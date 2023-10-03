@@ -20,11 +20,12 @@ namespace core_api
 
         // If needed, you can define relationships to other entities here
 
-        /*public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, IdentityConstants.ApplicationScheme);
             // Add custom claims if needed
             return userIdentity;
-        }*/
+        }
+        
     }
 }

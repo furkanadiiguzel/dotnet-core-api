@@ -8,32 +8,37 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using core_api.Context;
 
-namespace YourNamespace
+
+namespace core_api
 {
     public class SecurityConfig
     {
         public static void ConfigureSecurityServices(IServiceCollection services)
         {
-            // Add Identity
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer("SqlConnStr"); // 
+            });
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
-                // Configure Identity options here
+                
             })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-            // JWT Authentication
-            var key = Encoding.UTF8.GetBytes("YourSecretKey"); // Replace with your secret key
+            
+            var key = Encoding.UTF8.GetBytes("SecretKey"); 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
-                        ValidIssuer = "YourIssuer", // Replace with your issuer
+                        ValidIssuer = "Issuer", /
                         ValidateAudience = true,
-                        ValidAudience = "YourAudience", // Replace with your audience
+                        ValidAudience = "Audience", 
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key),
                         RequireExpirationTime = true,
@@ -45,12 +50,10 @@ namespace YourNamespace
                     {
                         OnAuthenticationFailed = context =>
                         {
-                            // Handle authentication failed event
                             return Task.CompletedTask;
                         },
                         OnTokenValidated = context =>
                         {
-                            // Handle token validated event
                             return Task.CompletedTask;
                         }
                     };

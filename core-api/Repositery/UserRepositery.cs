@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using core_api.Models;
 using Microsoft.EntityFrameworkCore;
+using core_api.Context;
 
 
 namespace core_api.Repositories
@@ -17,9 +18,9 @@ namespace core_api.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly ApplicationUser _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public UserRepository(ApplicationUser dbContext)
+        public UserRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }

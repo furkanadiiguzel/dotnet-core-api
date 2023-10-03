@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using core_api.Context; // Add the appropriate namespace for AppDbContext
+using core_api.Context; 
 using Microsoft.EntityFrameworkCore; // Add the necessary namespace for UseSqlServer
 
 var builder = WebApplication.CreateBuilder(args);
