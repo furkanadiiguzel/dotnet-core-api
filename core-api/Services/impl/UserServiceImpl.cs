@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using core_api.Models; 
 using core_api.Dtos;
-
-
-
+using core_api.Services;
 
 namespace core_api.Services
 {
@@ -75,6 +73,7 @@ namespace core_api.Services
             return resultUserDto;
         }
 
+        
         public async Task<ResultUserDto> GetUserByUsernameAsync(string username)
         {
             var resultUserDto = new ResultUserDto();
@@ -104,3 +103,8 @@ namespace core_api.Services
         }
     }
 }
+
+        
+
+    
+

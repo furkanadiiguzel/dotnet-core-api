@@ -1,3 +1,4 @@
+#nullable enable
 namespace core_api;
 
 public class WeatherForecast

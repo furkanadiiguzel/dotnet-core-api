@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
-using core_api.Models; // Replace with your actual model namespace
+using System.Threading.Tasks;
 using core_api.Dtos;
+using core_api.Models;
 
 namespace core_api.Services
 {
     public interface IUserService
     {
-        ResultUserDto CreateUser(User user, List<UserRole> userRoles);
-
-        ResultUserDto GetUserByUsername(string username);
+        Task<ResultUserDto> CreateUserAsync(ApplicationUser user, List<string> roles, string password);
+        Task<ResultUserDto> GetUserByUsernameAsync(string username);
     }
 }

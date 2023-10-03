@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using core_api.Models;
 
 namespace core_api // Replace with your actual namespace
 {

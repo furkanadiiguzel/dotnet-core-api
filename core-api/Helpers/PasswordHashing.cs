@@ -9,7 +9,6 @@ namespace core_api.Helpers
 {
     public class PasswordHashing
     {
-        private static RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
         private static readonly int SaltSize = 16;
         private static readonly int HashSize = 20;
 
@@ -46,6 +45,13 @@ namespace core_api.Helpers
             return true;
 
 
+        }
+        public static string GenerateRandomSalt()
+        {
+            var rng = RandomNumberGenerator.Create();
+            var salt = new byte[32];
+            rng.GetBytes(salt);
+            return Convert.ToBase64String(salt);
         }
 
         

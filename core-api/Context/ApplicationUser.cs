@@ -12,9 +12,10 @@ namespace core_api
         // Add additional user properties here
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
+        public override string  Email { get; set; }
         public string Phone { get; set; }
         public string Profile { get; set; }
+        
         public bool Enabled { get; set; } = true;
 
         // If needed, you can define relationships to other entities here
