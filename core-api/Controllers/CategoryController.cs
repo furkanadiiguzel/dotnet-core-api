@@ -78,7 +78,7 @@ namespace core_api.Controllers
             }
         }
 
-        [HttpGet("")]
+        [HttpGet("category")]
         public IActionResult GetAllCategories()
         {
             try

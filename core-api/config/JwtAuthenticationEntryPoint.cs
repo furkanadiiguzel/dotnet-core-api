@@ -22,21 +22,17 @@ namespace core_api.Middleware
         {
             try
             {
-                // Your authentication logic here
 
-                // If authentication succeeds, call the next middleware
                 await _next(context);
             }
             catch (UnauthorizedAccessException)
             {
-                // Handle unauthorized access
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                 context.Response.ContentType = "application/json";
                 await context.Response.WriteAsync("Unauthorized");
             }
             catch (Exception ex)
             {
-                // Handle other exceptions
                 _logger.LogError(ex, "An error occurred during authentication.");
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = "application/json";
