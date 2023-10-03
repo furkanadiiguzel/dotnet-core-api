@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using core_api.Models;
+using System.Linq;
+using core_api.Context;
 
 
 
@@ -20,9 +22,9 @@ namespace core_api.Repositories
 
     public class QuizRepository : IQuizRepository
     {
-        private readonly YourDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public QuizRepository(YourDbContext dbContext)
+        public QuizRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

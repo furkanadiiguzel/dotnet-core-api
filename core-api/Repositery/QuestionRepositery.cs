@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using core_api.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+
 
 namespace core_api.Repositories
 {

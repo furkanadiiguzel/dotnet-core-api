@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using core_api.Context;
-using core_api.Middleware; // Include the namespace where JwtAuthenticationMiddleware is defined
+using Microsoft.Extensions.Options; // Add this namespace
+using core_api.Middleware; // Include the namespace where JwtMiddleware is defined
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +16,9 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
+
+// Add JWT settings configuration
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

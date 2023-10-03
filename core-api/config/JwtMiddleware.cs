@@ -8,6 +8,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication;
 using System.Linq;
 
+
+
 namespace core_api.Middleware
 {
     public class JwtMiddleware

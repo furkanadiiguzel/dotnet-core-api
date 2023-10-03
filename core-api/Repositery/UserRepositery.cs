@@ -1,5 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using core_api.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace core_api.Repositories
 {
@@ -14,9 +17,9 @@ namespace core_api.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly YourDbContext _dbContext;
+        private readonly AuthDbContext _dbContext;
 
-        public UserRepository(YourDbContext dbContext)
+        public UserRepository(AuthDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }

@@ -14,9 +14,9 @@ namespace core_api.Repositories
 
     public class RoleRepository : IRoleRepository
     {
-        private readonly YourDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public RoleRepository(YourDbContext dbContext)
+        public RoleRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

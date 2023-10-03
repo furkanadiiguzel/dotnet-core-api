@@ -2,7 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using core_api.Models; // Replace with your actual model namespace
+using core_api.Models; 
+using core_api.Dtos;
+using core_api.Context;
+
+
 
 namespace core_api.Services
 {
